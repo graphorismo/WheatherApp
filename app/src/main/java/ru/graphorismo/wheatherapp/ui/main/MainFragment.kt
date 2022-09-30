@@ -12,6 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
 import ru.graphorismo.wheatherapp.R
+import ru.graphorismo.wheatherapp.data.WeatherRepository
 import ru.graphorismo.wheatherapp.data.api.OpenWeatherMapAPI
 
 
@@ -27,14 +28,10 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("https://api.openweathermap.org/")
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .build()
-        val weatherApi: OpenWeatherMapAPI = retrofit.create<OpenWeatherMapAPI>()
+
 
         viewLifecycleOwner.lifecycleScope.launch {
-            val response = weatherApi.getWeatherForMoscow()
+            val response = WeatherRepository().getWeatherForMoscow()
             Log.d("TEST", "Response received: $response")
         }
     }
