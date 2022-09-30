@@ -1,5 +1,8 @@
 package ru.graphorismo.wheatherapp.data.api.request.town
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 data class Main(
     val feels_like: Double,
     val grnd_level: Int,

@@ -1,6 +1,9 @@
 package ru.graphorismo.wheatherapp.data.api.request.town
 
-data class OpenWeatherMapTownRequest(
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class OpenWeatherMapTownResponse(
     val base: String,
     val clouds: Clouds,
     val cod: Int,
