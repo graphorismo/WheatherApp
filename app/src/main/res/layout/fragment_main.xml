@@ -9,7 +9,7 @@
     tools:ignore="SpeakableTextPresentCheck">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -17,31 +17,103 @@
             android:id="@+id/mainFragment_textView_header_town"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
             android:text="Town" />
 
         <TextView
             android:id="@+id/mainFragment_textView_field_town"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/mainFragment_textView_header_temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
             android:text="Temperature" />
 
         <TextView
             android:id="@+id/mainFragment_textView_field_temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/mainFragment_textView_header_pressure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
             android:text="Pressure" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_field_pressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_header_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:text="Humidity" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_field_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_header_clouds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:text="Clouds" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_field_clouds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_header_wind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:text="Wind" />
+
+        <TextView
+            android:id="@+id/mainFragment_textView_field_wind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:text="TextView" />
     </LinearLayout>
 
 </ScrollView>

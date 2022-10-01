@@ -23,6 +23,10 @@ class MainFragment : Fragment() {
 
     lateinit var textView_field_town: TextView
     lateinit var textView_field_temperature: TextView
+    lateinit var textView_field_pressure: TextView
+    lateinit var textView_field_humidity: TextView
+    lateinit var textView_field_clouds: TextView
+    lateinit var textView_field_wind: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,21 +37,33 @@ class MainFragment : Fragment() {
             view.findViewById<TextView>(R.id.mainFragment_textView_field_town)
         textView_field_temperature =
             view.findViewById<TextView>(R.id.mainFragment_textView_field_temperature)
+        textView_field_pressure =
+            view.findViewById<TextView>(R.id.mainFragment_textView_field_pressure)
+        textView_field_humidity =
+            view.findViewById<TextView>(R.id.mainFragment_textView_field_humidity)
+        textView_field_clouds =
+            view.findViewById<TextView>(R.id.mainFragment_textView_field_clouds)
+        textView_field_wind =
+            view.findViewById<TextView>(R.id.mainFragment_textView_field_wind)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launch {
-            // repeatOnLifecycle launches the block in a new coroutine every time the
-            // lifecycle is in the STARTED state (or above) and cancels it when it's STOPPED.
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                // Trigger the flow and start listening for values.
-                // Note that this happens when lifecycle is STARTED and stops
-                // collecting when the lifecycle is STOPPED
                 activityViewModel.weatherState.collect { weatherState ->
-                    textView_field_town.text = weatherState.name
-                    textView_field_temperature.text = (weatherState.main.temp-273).toString()
+                    textView_field_town.text =
+                        weatherState.name
+                    textView_field_temperature.text =
+                        (weatherState.main.temp.toInt()-273).toString()+" C"
+                    textView_field_pressure.text=
+                        weatherState.main.pressure.toString()
+                    textView_field_humidity.text =
+                        weatherState.main.humidity.toString()+"%"
+                    textView_field_clouds.text=weatherState.clouds.all.toString()
+                    textView_field_wind.text =
+                        weatherState.wind.speed.toString()+" m/s"
                 }
             }
         }
