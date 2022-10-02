@@ -22,13 +22,12 @@
             android:paddingTop="5dp"
             android:text="Town" />
 
-        <TextView
-            android:id="@+id/mainFragment_textView_field_town"
+        <Button
+            android:id="@+id/mainFragment_button_town"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textAlignment="center"
-            android:text="TextView" />
+            android:text="Town"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/mainFragment_textView_header_temperature"

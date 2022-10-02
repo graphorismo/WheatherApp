@@ -3,7 +3,10 @@ package ru.graphorismo.wheatherapp.data
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
+import ru.graphorismo.wheatherapp.BuildConfig
 import ru.graphorismo.wheatherapp.data.api.OpenWeatherMapAPI
+import ru.graphorismo.wheatherapp.data.api.request.town.OpenWeatherMapTownResponse
+import ru.graphorismo.wheatherapp.ui.activity.TownState
 
 class WeatherRepository {
     private val weatherApi : OpenWeatherMapAPI
@@ -15,5 +18,6 @@ class WeatherRepository {
         weatherApi = retrofit.create<OpenWeatherMapAPI>()
     }
 
-    suspend fun getWeatherForMoscow() = weatherApi.getWeatherForMoscow()
+    suspend fun getWeatherFor(town: TownState): OpenWeatherMapTownResponse =
+        weatherApi.getWeatherFor(town.value, BuildConfig.API_KEY.toString())
 }

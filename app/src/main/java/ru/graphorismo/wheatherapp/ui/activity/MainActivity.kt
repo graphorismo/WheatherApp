@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import ru.graphorismo.wheatherapp.R
 import ru.graphorismo.wheatherapp.ui.main.MainFragment
 import ru.graphorismo.wheatherapp.ui.splash.SplashFragment
+import ru.graphorismo.wheatherapp.ui.townlist.TownListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                     when (uiState) {
                         UIState.SPLASH -> showSplashFragment()
                         UIState.MAIN -> showMainFragment()
+                        UIState.TOWNS -> showTownsFragment()
                     }
                 }
             }
@@ -48,6 +50,13 @@ class MainActivity : AppCompatActivity() {
         val splash = SplashFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.mainFragmentContainerView, splash)
+            .commit()
+    }
+
+    private fun showTownsFragment(){
+        val towns = TownListFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.mainFragmentContainerView, towns)
             .commit()
     }
 }
